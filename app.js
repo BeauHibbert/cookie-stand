@@ -50,7 +50,7 @@ seattle.getTotalCookiesSold();
 let tokyo = {
   minCustomers: 3,
   maxCustomers: 24,
-  cookiesPerCustomer: 6.3,
+  cookiesPerCustomer: 1.2,
 	customersPerHour: 0,
 	cookiesPerHour: 0,
 	totalCookies: 0,
@@ -88,3 +88,137 @@ tokyo.getHourlyCookiesSold();
 tokyo.createLocationList();
 tokyo.getTotalCookiesSold();
 
+
+
+
+
+let dubai = {
+  minCustomers:11,
+  maxCustomers: 38,
+  cookiesPerCustomer: 3.7,
+	customersPerHour: 0,
+	cookiesPerHour: 0,
+	totalCookies: 0,
+	dubaiCookies: [],
+	getRandomHourlyCustomers: function() {	
+    this.customersPerHour = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
+	},
+	getHourlyCookiesSold: function() {
+    this.cookiesPerHour = Math.ceil(this.customersPerHour * this.cookiesPerCustomer);
+	},
+	createLocationList: function() {
+		for(let i=0; i < hours.length; i++) {
+			this.getRandomHourlyCustomers();
+			this.getHourlyCookiesSold();
+			let liEl = document.createElement('li');
+			liEl.textContent = hours[i] + ': ' + this.cookiesPerHour;
+			let ulEl = document.getElementById('dubai');
+			ulEl.appendChild(liEl);
+			this.dubaiCookies.push(this.cookiesPerHour);
+		}
+	},
+	getTotalCookiesSold: function() {
+		for(let i=0; i < this.dubaiCookies.length; i++) {
+			this.totalCookies += i;
+		}
+		let liEl = document.createElement('li');
+		liEl.textContent = 'Total: ' + this.totalCookies;
+		let ulEl = document.getElementById('dubai');
+		ulEl.appendChild(liEl);
+	}
+}
+
+dubai.getRandomHourlyCustomers();
+dubai.getHourlyCookiesSold();
+dubai.createLocationList();
+dubai.getTotalCookiesSold();
+
+
+
+
+
+let paris = {
+  minCustomers: 20,
+  maxCustomers: 38,
+  cookiesPerCustomer: 2.3,
+	customersPerHour: 0,
+	cookiesPerHour: 0,
+	totalCookies: 0,
+	parisCookies: [],
+	getRandomHourlyCustomers: function() {	
+    this.customersPerHour = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
+	},
+	getHourlyCookiesSold: function() {
+    this.cookiesPerHour = Math.ceil(this.customersPerHour * this.cookiesPerCustomer);
+	},
+	createLocationList: function() {
+		for(let i=0; i < hours.length; i++) {
+			this.getRandomHourlyCustomers();
+			this.getHourlyCookiesSold();
+			let liEl = document.createElement('li');
+			liEl.textContent = hours[i] + ': ' + this.cookiesPerHour;
+			let ulEl = document.getElementById('paris');
+			ulEl.appendChild(liEl);
+			this.parisCookies.push(this.cookiesPerHour);
+		}
+	},
+	getTotalCookiesSold: function() {
+		for(let i=0; i < this.parisCookies.length; i++) {
+			this.totalCookies += i;
+		}
+		let liEl = document.createElement('li');
+		liEl.textContent = 'Total: ' + this.totalCookies;
+		let ulEl = document.getElementById('paris');
+		ulEl.appendChild(liEl);
+	}
+}
+
+paris.getRandomHourlyCustomers();
+paris.getHourlyCookiesSold();
+paris.createLocationList();
+paris.getTotalCookiesSold();
+
+
+
+
+
+let lima = {
+  minCustomers: 2,
+  maxCustomers: 16,
+  cookiesPerCustomer: 4.6,
+	customersPerHour: 0,
+	cookiesPerHour: 0,
+	totalCookies: 0,
+	limaCookies: [],
+	getRandomHourlyCustomers: function() {	
+    this.customersPerHour = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
+	},
+	getHourlyCookiesSold: function() {
+    this.cookiesPerHour = Math.ceil(this.customersPerHour * this.cookiesPerCustomer);
+	},
+	createLocationList: function() {
+		for(let i=0; i < hours.length; i++) {
+			this.getRandomHourlyCustomers();
+			this.getHourlyCookiesSold();
+			let liEl = document.createElement('li');
+			liEl.textContent = hours[i] + ': ' + this.cookiesPerHour;
+			let ulEl = document.getElementById('paris');
+			ulEl.appendChild(liEl);
+			this.limaCookies.push(this.cookiesPerHour);
+		}
+	},
+	getTotalCookiesSold: function() {
+		for(let i=0; i < this.limaCookies.length; i++) {
+			this.totalCookies += i;
+		}
+		let liEl = document.createElement('li');
+		liEl.textContent = 'Total: ' + this.totalCookies;
+		let ulEl = document.getElementById('paris');
+		ulEl.appendChild(liEl);
+	}
+}
+
+lima.getRandomHourlyCustomers();
+lima.getHourlyCookiesSold();
+lima.createLocationList();
+lima.getTotalCookiesSold();
