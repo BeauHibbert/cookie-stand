@@ -202,7 +202,7 @@ let lima = {
 			this.getHourlyCookiesSold();
 			let liEl = document.createElement('li');
 			liEl.textContent = hours[i] + ': ' + this.cookiesPerHour;
-			let ulEl = document.getElementById('paris');
+			let ulEl = document.getElementById('lima');
 			ulEl.appendChild(liEl);
 			this.limaCookies.push(this.cookiesPerHour);
 		}
@@ -213,7 +213,7 @@ let lima = {
 		}
 		let liEl = document.createElement('li');
 		liEl.textContent = 'Total: ' + this.totalCookies;
-		let ulEl = document.getElementById('paris');
+		let ulEl = document.getElementById('lima');
 		ulEl.appendChild(liEl);
 	}
 }
