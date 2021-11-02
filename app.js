@@ -29,7 +29,7 @@ let seattle = {
 	},
 	getTotalCookiesSold: function() {
 		for(let i=0; i < this.seattleCookies.length; i++) {
-			this.totalCookies += i;
+			this.totalCookies += this.seattleCookies[i];
 		}
 		let liEl = document.createElement('li');
 		liEl.textContent = 'Total: ' + this.totalCookies;
@@ -74,7 +74,7 @@ let tokyo = {
 	},
 	getTotalCookiesSold: function() {
 		for(let i=0; i < this.tokyoCookies.length; i++) {
-			this.totalCookies += i;
+			this.totalCookies += this.tokyoCookies[i]
 		}
 		let liEl = document.createElement('li');
 		liEl.textContent = 'Total: ' + this.totalCookies;
@@ -119,7 +119,7 @@ let dubai = {
 	},
 	getTotalCookiesSold: function() {
 		for(let i=0; i < this.dubaiCookies.length; i++) {
-			this.totalCookies += i;
+			this.totalCookies += this.dubaiCookies[i]
 		}
 		let liEl = document.createElement('li');
 		liEl.textContent = 'Total: ' + this.totalCookies;
@@ -164,7 +164,7 @@ let paris = {
 	},
 	getTotalCookiesSold: function() {
 		for(let i=0; i < this.parisCookies.length; i++) {
-			this.totalCookies += i;
+			this.totalCookies += this.parisCookies[i];
 		}
 		let liEl = document.createElement('li');
 		liEl.textContent = 'Total: ' + this.totalCookies;
@@ -209,7 +209,7 @@ let lima = {
 	},
 	getTotalCookiesSold: function() {
 		for(let i=0; i < this.limaCookies.length; i++) {
-			this.totalCookies += i;
+			this.totalCookies += this.limaCookies[i];
 		}
 		let liEl = document.createElement('li');
 		liEl.textContent = 'Total: ' + this.totalCookies;
