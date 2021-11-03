@@ -2,7 +2,8 @@
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-function CookieStand(minCustomers, maxCustomers, cookiesPerCustomer, customersPerHour, cookiesPerHour, cookiesPerDay) {
+function CookieStand(shopName, minCustomers, maxCustomers, cookiesPerCustomer, customersPerHour, cookiesPerHour, cookiesPerDay) {
+	this.shopName = shopName;
 	this.minCustomers = minCustomers;
 	this.maxCustomers = maxCustomers;
 	this.cookiesPerCustomer = cookiesPerCustomer;
@@ -13,8 +14,6 @@ function CookieStand(minCustomers, maxCustomers, cookiesPerCustomer, customersPe
 
 	this.getRandomHourlyCustomers();
 	this.getHourlyCookiesSold();
-	this.createLocationList();
-	this.getTotalCookiesSold();
 }
 
 CookieStand.prototype.getRandomHourlyCustomers = function() {
@@ -31,7 +30,7 @@ CookieStand.prototype.createLocationList = function() {
 		this.getHourlyCookiesSold();
 		let liEl = document.createElement('li');
 		liEl.textContent = hours[i] + ': ' + this.cookiesPerHour;
-		let ulEl = document.getElementById('seattle');
+		let ulEl = document.getElementById(this.shopName);
 		ulEl.appendChild(liEl);
 		this.hourlyTotals.push(this.cookiesPerHour);
 	}
@@ -43,11 +42,29 @@ CookieStand.prototype.getTotalCookiesSold = function() {
 	}
 	let liEl = document.createElement('li');
 	liEl.textContent = 'Total: ' + this.cookiesPerDay;
-	let ulEl = document.getElementById('seattle');
+	let ulEl = document.getElementById(this.shopName);
 	ulEl.appendChild(liEl);
 }
 
-let seattle = new CookieStand(23, 65, 6.3, 0, 0, 0)
+let seattle = new CookieStand('seattle', 23, 65, 6.3, 0, 0, 0)
+seattle.createLocationList();
+seattle.getTotalCookiesSold();
+
+let tokyo = new CookieStand('tokyo', 3, 24, 1.2, 0, 0, 0)
+tokyo.createLocationList();
+tokyo.getTotalCookiesSold();
+
+let dubai = new CookieStand('dubai', 11, 38, 3.7, 0, 0, 0)
+dubai.createLocationList();
+dubai.getTotalCookiesSold();
+
+let paris = new CookieStand('paris', 20, 38, 2.3, 0, 0, 0)
+paris.createLocationList();
+paris.getTotalCookiesSold();
+
+let lima = new CookieStand('lima', 2, 16, 4.6, 0, 0, 0)
+lima.createLocationList();
+lima.getTotalCookiesSold();
 
 // let seattle = {
 //   minCustomers: 23,
