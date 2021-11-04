@@ -11,7 +11,29 @@ td, th {
 
 /* index.html styles */
 
+/* img {
+  display: block;
+  margin: 0 auto;
+} */
+
+#chinook {
+  display: block;
+  margin: 0 auto;
+}
+
+#family {
+  height: 200px;
+  width: 350px;
+}
+
+.three-image-div {
+  text-align: center;
+}
+
+#three-image-div > img {
+  padding: 20px;
+}
+
 #locations {
-  background-color: blue;
   font-size: 20px;
 }
