@@ -115,6 +115,9 @@ function hourlyTotalsAllLocations() {
 	}
 
 	let footerRowEl = document.createElement('tr');
+	let hourlyTotalsAllStandsTdEl = document.createElement('td');
+	hourlyTotalsAllStandsTdEl.textContent = 'Hourly Total For All Stands';
+	footerRowEl.appendChild(hourlyTotalsAllStandsTdEl);
 
 	for(let j=0; j < hours.length; j++) {
 		let hourlyTotalAllStandsTdEl = document.createElement('td');
