@@ -100,13 +100,15 @@ lima.render();
 
 // new shop form functionality
 
-let submitButton = document.getElementById('submit-button');
+// let submitButton = document.getElementById('submit-button');
 let form = document.getElementById('new-store-form');
 
-function handleClick(event) {
+function handleFormSubmit(event) {
 	event.preventDefault();
+	const formEl = event.target;
 	console.log(event.target);
-	console.log('hitting click event');
+	console.log('hitting form submit event');
 }
 
-submitButton.addEventListener('click', handleClick);
+// submitButton.addEventListener('click', handleClick);
+form.addEventListener('submit', handleFormSubmit);
