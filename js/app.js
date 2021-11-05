@@ -107,19 +107,14 @@ let allStandsTotalHourlyCookiesArray = [];
 function hourlyTotalsAllLocations() {
 	for(let i=0; i < hours.length; i++) {
 		let allStandsTotalHourlyCookies = 0;
-		for(let c=0; c < cookieStands.length; c++) {
-			// c.getHourlyCookiesSold();
-			console.log('cookieStands: ', cookieStands)
-			console.log('hourlyTotals: ', c.hourlyTotals)
-			let temp = cookieStands[c].hourlyTotals[i];
+		for(let j=0; j < cookieStands.length; j++) {
+			let temp = cookieStands[j].hourlyTotals[i];
 			allStandsTotalHourlyCookies += temp;
 		}
-		allStandsTotalHourlyCookiesArray.push(allStandsTotalHourlyCookies)
-		console.log('allStandsTotalHourlyCookiesArray: ', allStandsTotalHourlyCookiesArray);
+		allStandsTotalHourlyCookiesArray.push(allStandsTotalHourlyCookies);
 	}
 
 	let footerRowEl = document.createElement('tr');
-	console.log('cookie stands array: ', cookieStands)
 
 	for(let j=0; j < hours.length; j++) {
 		let hourlyTotalAllStandsTdEl = document.createElement('td');
