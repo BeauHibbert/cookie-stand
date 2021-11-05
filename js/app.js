@@ -100,15 +100,19 @@ lima.render();
 
 // new shop form functionality
 
-// let submitButton = document.getElementById('submit-button');
 let form = document.getElementById('new-store-form');
 
 function handleFormSubmit(event) {
 	event.preventDefault();
 	const formEl = event.target;
-	console.log(event.target);
-	console.log('hitting form submit event');
+	const storeName = formEl.storeName.value;
+	const minCust = parseInt(formEl.minCust.value);
+	const maxCust = parseInt(formEl.maxCust.value);
+	// cookies per customer can be a decimal, so don't need parseInt
+	const cksPerCust = formEl.cksPerCust.value;
+
+	let newStore = new CookieStand(storeName, minCust, maxCust, cksPerCust, 0, 0, 0)
+	newStore.render();
 }
 
-// submitButton.addEventListener('click', handleClick);
 form.addEventListener('submit', handleFormSubmit);
