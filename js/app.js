@@ -97,3 +97,16 @@ paris.render();
 
 let lima = new CookieStand('Lima', 2, 16, 4.6, 0, 0, 0)
 lima.render();
+
+// new shop form functionality
+
+let submitButton = document.getElementById('submit-button');
+let form = document.getElementById('new-store-form');
+
+function handleClick(event) {
+	event.preventDefault();
+	console.log(event.target);
+	console.log('hitting click event');
+}
+
+submitButton.addEventListener('click', handleClick);
