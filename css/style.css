@@ -1,5 +1,3 @@
-/* sales.html styles */
-
 #table > table, td, th {
   border: 1px solid black;
   border-collapse: collapse;
@@ -9,6 +7,10 @@ td, th {
   padding: 5px;
   color: silver;
   font-family: Arial, Helvetica;
+}
+
+fieldset {
+  margin-bottom: 5px;
 }
 
 ul {
@@ -25,13 +27,6 @@ body {
   background-color: salmon;
 }
 
-/* index.html styles */
-
-/* img {
-  display: block;
-  margin: 0 auto;
-} */
-
 .headline {
   font-family: 'Merriweather', serif;
   color: navy;
@@ -39,6 +34,13 @@ body {
 
 .center {
   text-align: center;
+}
+
+.container {
+  background-color: slategrey;
+  width: 600px;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 #chinook {
@@ -51,14 +53,6 @@ body {
   width: 350px;
 }
 
-/* .three-image-div {
-  text-align: center;
-} */
-
-/* #index-body {
-  background-color: salmon;
-} */
-
 #three-image-div > img {
   padding: 20px;
 }
@@ -67,26 +61,25 @@ body {
   width: 500px;
   margin: 0 auto;
 }
+
 #title {
   color: black;
 }
 
-.container {
-  background-color: slategrey;
-  width: 600px;
-  margin: 0 auto;
-  padding-bottom: 10px;
-}
-
 #table-container {
   width: 900px;
-  padding-left: 100px;
+  padding: 5px 25px 10px;
 
 }
 
 #sales-title {
   color: silver;
   font-family: Arial, Helvetica;
+}
+
+#new-store-form {
+  width: 1225px;
+  margin: 0 auto;
 }
 
 
