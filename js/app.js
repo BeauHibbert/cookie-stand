@@ -1,6 +1,7 @@
 "use strict"
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let cookieStands = [];
 
 function CookieStand(shopName, minCustomers, maxCustomers, cookiesPerCustomer, customersPerHour, cookiesPerHour, cookiesPerDay) {
 	this.shopName = shopName;
@@ -11,6 +12,7 @@ function CookieStand(shopName, minCustomers, maxCustomers, cookiesPerCustomer, c
 	this.cookiesPerHour = cookiesPerHour;
 	this.cookiesPerDay = cookiesPerDay;
 	this.hourlyTotals = [];
+	cookieStands.push(this);
 
 	this.getHourlyCookiesSold();
 }
@@ -97,3 +99,51 @@ paris.render();
 
 let lima = new CookieStand('Lima', 2, 16, 4.6, 0, 0, 0)
 lima.render();
+
+// display hourly totals for all locations
+
+let allStandsTotalHourlyCookiesArray = [];
+
+function hourlyTotalsAllLocations() {
+	for(let i=0; i < hours.length; i++) {
+		let allStandsTotalHourlyCookies = 0;
+		for(let j=0; j < cookieStands.length; j++) {
+			let temp = cookieStands[j].hourlyTotals[i];
+			allStandsTotalHourlyCookies += temp;
+		}
+		allStandsTotalHourlyCookiesArray.push(allStandsTotalHourlyCookies);
+	}
+
+	let footerRowEl = document.createElement('tr');
+	let hourlyTotalsAllStandsTdEl = document.createElement('td');
+	hourlyTotalsAllStandsTdEl.textContent = 'Hourly Total For All Stands';
+	footerRowEl.appendChild(hourlyTotalsAllStandsTdEl);
+
+	for(let j=0; j < hours.length; j++) {
+		let hourlyTotalAllStandsTdEl = document.createElement('td');
+		hourlyTotalAllStandsTdEl.textContent = allStandsTotalHourlyCookiesArray[j];
+		footerRowEl.appendChild(hourlyTotalAllStandsTdEl)
+	}
+	tableEl.appendChild(footerRowEl);
+}
+
+hourlyTotalsAllLocations();
+
+// new shop form functionality
+
+let form = document.getElementById('new-store-form');
+
+function handleFormSubmit(event) {
+	event.preventDefault();
+	const formEl = event.target;
+	const storeName = formEl.storeName.value;
+	const minCust = parseInt(formEl.minCust.value);
+	const maxCust = parseInt(formEl.maxCust.value);
+	// cookies per customer can be a decimal, so don't need parseInt
+	const cksPerCust = formEl.cksPerCust.value;
+
+	let newStore = new CookieStand(storeName, minCust, maxCust, cksPerCust, 0, 0, 0)
+	newStore.render();
+}
+
+form.addEventListener('submit', handleFormSubmit);
