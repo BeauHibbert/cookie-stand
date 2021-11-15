@@ -7,6 +7,22 @@
 
 td, th {
   padding: 5px;
+  color: silver;
+  font-family: Arial, Helvetica;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+p, li {
+  font-family: "Georgia";
+  color: whitesmoke;
+}
+
+body {
+  background-color: salmon;
 }
 
 /* index.html styles */
@@ -15,6 +31,15 @@ td, th {
   display: block;
   margin: 0 auto;
 } */
+
+.headline {
+  font-family: 'Merriweather', serif;
+  color: navy;
+}
+
+.center {
+  text-align: center;
+}
 
 #chinook {
   display: block;
@@ -26,14 +51,42 @@ td, th {
   width: 350px;
 }
 
-.three-image-div {
+/* .three-image-div {
   text-align: center;
-}
+} */
+
+/* #index-body {
+  background-color: salmon;
+} */
 
 #three-image-div > img {
   padding: 20px;
 }
 
-#locations {
-  font-size: 20px;
+#about p {
+  width: 500px;
+  margin: 0 auto;
 }
+#title {
+  color: black;
+}
+
+.container {
+  background-color: slategrey;
+  width: 600px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+#table-container {
+  width: 900px;
+  padding-left: 100px;
+
+}
+
+#sales-title {
+  color: silver;
+  font-family: Arial, Helvetica;
+}
+
+
